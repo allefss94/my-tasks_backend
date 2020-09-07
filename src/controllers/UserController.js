@@ -8,7 +8,11 @@ module.exports = {
 
   async create(request, response) {
     const newUser = request.body;
-    await User.create(newUser);
+    try {
+      await User.create(newUser);
+    } catch (error) {
+      return response.json('This user already exists');
+    }
     return response.send(newUser);
   },
   async update(request, response) {
