@@ -5,6 +5,7 @@ const app = express();
 
 try {
   mongoose.connect('mongodb://localhost/mongo', {
+    useCreateIndex: true,
     useUnifiedTopology: true,
     useNewUrlParser: true,
   });
