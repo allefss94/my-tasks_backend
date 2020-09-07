@@ -15,12 +15,14 @@ module.exports = {
     }
     return response.send(newUser);
   },
+
   async update(request, response) {
     const { id } = request.params;
     const userUpdate = request.body;
     await User.findByIdAndUpdate(id, userUpdate);
     return response.send(userUpdate);
   },
+
   async delete(request, response) {
     const { id } = request.params;
     await User.findByIdAndDelete(id);
