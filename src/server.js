@@ -11,6 +11,7 @@ try {
       useCreateIndex: true,
       useUnifiedTopology: true,
       useNewUrlParser: true,
+      useFindAndModify: false,
     }
   );
 } catch (error) {

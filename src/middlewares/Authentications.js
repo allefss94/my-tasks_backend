@@ -7,8 +7,8 @@ module.exports = {
     if (user !== null) {
       return user.name === name && user.password === password
         ? next()
-        : response.json('Authentication fail');
+        : response.status(400).json('Authentication fail');
     }
-    return response.json('User not find');
+    return response.status(400).json('User not find');
   },
 };

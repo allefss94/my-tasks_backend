@@ -11,16 +11,16 @@ module.exports = {
     try {
       await User.create(newUser);
     } catch (error) {
-      return response.json('This user already exists');
+      return response.status(400).json(error);
     }
-    return response.send(newUser);
+    return response.status(201).send(newUser);
   },
 
   async update(request, response) {
     const { id } = request.params;
     const userUpdate = request.body;
     await User.findByIdAndUpdate(id, userUpdate);
-    return response.send(userUpdate);
+    return response.status(201).send(userUpdate);
   },
 
   async delete(request, response) {

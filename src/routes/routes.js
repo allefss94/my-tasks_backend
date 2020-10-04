@@ -10,7 +10,7 @@ router.post('/user', UserController.create);
 router.put('/user/:id', UserController.update);
 router.delete('/user/:id', UserController.delete);
 
-router.get('/tasks', UserAuth.UserAuthentication, TaskController.index);
+router.post('/tasks', UserAuth.UserAuthentication, TaskController.index);
 router.post('/task', TaskController.create);
 router.put('/task/:id', TaskController.update);
 router.delete('/task/:id', TaskController.delete);
