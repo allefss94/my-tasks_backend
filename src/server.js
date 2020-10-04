@@ -23,6 +23,6 @@ app.use(cors());
 
 app.use(router);
 
-app.listen(3030, () => {
+app.listen('https://supertasks.herokuapp.com/' || 3030, () => {
   console.log('Server running on port 3030');
 });
