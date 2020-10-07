@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use(router);
-
-app.listen(process.env.PORT || 3030, () => {
-  console.log('Server running on port 3030');
+const port = process.env.PORT
+app.listen(port || 3030, () => {
+  console.log('Server running on port'+ port || 3030);
 });
