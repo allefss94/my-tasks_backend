@@ -6,7 +6,7 @@ const cors = require('cors');
 
 try {
   mongoose.connect(
-    'mongodb+srv://test:test@my-task.nqi5g.mongodb.net/my-task?retryWrites=true&w=majority',
+    'mongodb://localhost/super-task'',
     {
       useCreateIndex: true,
       useUnifiedTopology: true,
