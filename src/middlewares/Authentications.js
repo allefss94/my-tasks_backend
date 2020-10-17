@@ -8,8 +8,8 @@ module.exports = {
       if (user.name === name && user.password === password) {
         return next();
       }
-      return response.json('Authentication fail');
+      return response.status(404).json('Authentication fail');
     }
-    return response.json('User not find');
+    return response.status(404).json('User not find');
   },
 };

@@ -15,13 +15,25 @@ module.exports = {
   async update(request, response) {
     const { id } = request.params;
     const newTask = request.body;
-    await Task.findByIdAndUpdate(id, newTask);
-    return response.status(201).send(newTask);
+    try{
+      await Task.findByIdAndUpdate(id, newTask);
+      return response.status(201).send(newTask);
+
+    }catch(error){
+      console.log(error)
+      return response.send(error).json(error)
+    }
   },
 
   async delete(request, response) {
     const { id } = request.params;
-    await Task.findByIdAndDelete(id);
-    return response.json('Task removed with success');
+    try {
+      await Task.findByIdAndDelete(id);
+      return response.json('Task removed with success');
+      
+    } catch (error) {
+      console.log(error)
+      return response.json(error)
+    }
   },
 };

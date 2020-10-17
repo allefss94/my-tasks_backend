@@ -11,7 +11,7 @@ module.exports = {
     try {
       await User.create(newUser);
     } catch (error) {
-      return response.json('This user already exists');
+      return response.status(404).json('This user already exists');
     }
     return response.send(newUser);
   },
